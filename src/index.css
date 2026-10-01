@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #EEF2FF;
+  --color-primary-100: #E0E7FF;
+  --color-primary-200: #C7D2FE;
+  --color-primary-300: #A5B4FC;
+  --color-primary-400: #818CF8;
+  --color-primary-500: #6366F1;
+  --color-primary-600: #4F46E5;
+  --color-primary-700: #4338CA;
+  --color-primary-800: #3730A3;
+  --color-primary-900: #312E81;
+
+  --color-warm-50: #FFF7ED;
+  --color-warm-100: #FFEDD5;
+  --color-warm-200: #FED7AA;
+  --color-warm-300: #FDBA74;
+  --color-warm-400: #FB923C;
+  --color-warm-500: #F97316;
+
+  --color-success-50: #ECFDF5;
+  --color-success-500: #10B981;
+  --color-success-600: #059669;
+
+  --color-caution-50: #FFFBEB;
+  --color-caution-500: #F59E0B;
+  --color-caution-600: #D97706;
+
+  --color-alert-50: #FEF2F2;
+  --color-alert-500: #EF4444;
+  --color-alert-600: #DC2626;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Large text mode for patients */
+.text-size-large {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+.text-size-large h1 { font-size: 2rem; }
+.text-size-large h2 { font-size: 1.5rem; }
+.text-size-large .card-title { font-size: 1.25rem; }
+
+.text-size-xlarge {
+  font-size: 1.375rem;
+  line-height: 1.85;
+}
+.text-size-xlarge h1 { font-size: 2.25rem; }
+.text-size-xlarge h2 { font-size: 1.75rem; }
+.text-size-xlarge .card-title { font-size: 1.5rem; }
+
+/* Pulse animation for mic */
+@keyframes mic-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  50% { box-shadow: 0 0 0 16px rgba(99, 102, 241, 0); }
+}
+
+.mic-pulse {
+  animation: mic-pulse 2s ease-in-out infinite;
+}
+
+/* Waveform animation */
+@keyframes wave-bar {
+  0%, 100% { height: 8px; }
+  50% { height: 24px; }
+}
+
+.wave-bar {
+  animation: wave-bar 0.8s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: page-in 0.3s ease-out forwards;
+}
+
+@keyframes page-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
